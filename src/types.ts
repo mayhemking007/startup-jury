@@ -10,3 +10,8 @@ export interface inputType {
     memory? : string,
     history? : any[]
 }
+export interface Tool {
+    name : string,
+    description : string
+    execute : (input : any) => Promise<any>
+}

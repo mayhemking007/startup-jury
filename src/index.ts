@@ -1,4 +1,5 @@
 import { runLLM } from "./llm/client.js";
+import { executeTool } from "./tools/executor.js";
 
 const main = async () => {
     const res = await runLLM({
@@ -10,4 +11,11 @@ const main = async () => {
         });
     console.log(res);
 }
-main();
+
+const test = async () => {
+    const result = await executeTool("search_market", {query : "AI fitness App"});
+    console.log(result);
+}
+
+test();
+// main();
